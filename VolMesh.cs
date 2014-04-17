@@ -5,7 +5,7 @@ using System.Collections;
 
 public class VolMesh
 {
-	private static int size = 20, maxHeight = 100;
+	private readonly int size = 20, maxHeight = 100;
 	private int xi,yi,zi,seed,Y;
 	private float freq;
 	public GameObject m_mesh;
