@@ -43,18 +43,13 @@ public class VolMesh
 		float[,,] voxels = new float[size+1,size+1,size+1];
 		int height;
 		float hFactor;
-		for(int z = 0; z < size+1; z++)
-		{
-			for(int y = 0; y < size+1; y++)
-			{	
-				height = yi + y;
-				hFactor = (float)(maxHeight - 2*height) / (float)maxHeight;
-				for(int x = 0; x < size+1; x++)
-				{		
-					voxels[x,y,z] = -hFactor + m_perlin.FractalNoise3D((float)(xi+x), (float)(yi+y), (float)(zi+z), 3, freq, 1.0f); 
-				}
-			}
-		}
+		for(int z = 0; z < size+1; z++){
+		for(int y = 0; y < size+1; y++){	
+		height = yi + y;
+		hFactor = (float)(maxHeight - 2*height) / (float)maxHeight;
+		for(int x = 0; x < size+1; x++){		
+		   voxels[x,y,z] = -hFactor + m_perlin.FractalNoise3D((float)(xi+x), (float)(yi+y), (float)(zi+z), 3, freq, 1.0f); 
+		}}}
 		
 		mesh = MarchingCubes.CreateMesh(voxels);
 		
