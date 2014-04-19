@@ -4,8 +4,8 @@ using System.Collections;
 public class Chunkloader : MonoBehaviour
 {
 	private Chunk[,] activeChunks;
-	private readonly int numChunks = 3;
-	private readonly seed = 5;
+	private const int numChunks = 3;
+	private const int seed = 5;
 	private float freq = 80.0f;
 	private float playerX,playerZ;
 	private int cLX = 100,cLZ = 100;
